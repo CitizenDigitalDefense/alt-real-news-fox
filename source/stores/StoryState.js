@@ -16,8 +16,8 @@ export default class ToolState {
       slug: path,
     };
     let uri = isProduction ? 'https://fake-news-api.herokuapp.com/stories' : 'http://localhost:5000/stories';
-    // const { data } = await axios.get(uri, { params });
-    const data = require('./temp.json');
+    const { data } = await axios.get(uri, { params });
+    // const data = require('./temp.json');
     data.articles ? this.setData(data.articles) : this.setSingle(data.article);
   }
 
