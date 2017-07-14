@@ -17,6 +17,7 @@ export default class StoryPage extends Component {
 	render() {
 		const story = this.store.storyState.article || {};
 		const scraped = this.store.storyState.scraped;
+		console.log(this.store.storyState)
 		return (
 			<div className="page">
 				<Helmet>
