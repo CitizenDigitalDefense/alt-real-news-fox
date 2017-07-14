@@ -15,9 +15,9 @@ export default class StoryPage extends Component {
 		this.store = this.props.store;
 	}
 	render() {
-		const story = this.store.storyState.article || {};
-		const scraped = this.store.storyState.scraped;
-		console.log(this.store.storyState)
+		const story = this.store.storyState.story;
+		const scraped = this.store.storyState.story.scraped;
+		console.log(story)
 		return (
 			<div className="page">
 				<Helmet>
@@ -34,10 +34,27 @@ export default class StoryPage extends Component {
 						<h2>ANALYSIS</h2>
 						<h1>{story.headline}</h1>
 						<div className="story-header-meta">
-							<div className="byline">
-								{(story.byLine && story.byLine.image) ? <img src={`${story.byLine.image}`} /> : ''}
-								{(story.byLine && story.byLine.name) ? <p>By <strong>{story.byLine.name}</strong> • Published {story.dateline}</p> : <p>Published {story.dateline}</p>}
-							</div>
+							{story.byLine.length > 0 && <div className="byline">
+								<p>
+									By&ensp;
+									{Array.prototype.map.call(story.byLine, (by, index, arr) => {
+										return (
+											<span>
+												<strong>
+													{by.name}
+												</strong>
+												{(index !== arr.length - 1) ? ' and ' : '' }
+											</span>
+										);
+									})}
+								 &ensp;• Published {story.dateline}
+								 &ensp;• <a href="https://www.foxnews.com/"><strong>Fox News</strong></a>
+								</p>
+							</div>}
+							{story.byLine.name && <div className="byline">
+								{story.byLine.image ? <img src={`${story.byLine.image}`} /> : ''}
+								{story.byLine.name ? <p>By <strong>{story.byLine.name}</strong> • Published {story.dateline}</p> : <p>Published {story.dateline}</p>}
+							</div>}
 						</div>
 					</div>
 					<div className="story-content">
