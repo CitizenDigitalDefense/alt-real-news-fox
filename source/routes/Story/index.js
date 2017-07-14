@@ -15,13 +15,18 @@ export default class StoryPage extends Component {
 		this.store = this.props.store;
 	}
 	render() {
-		const { story } = this.store.storyState;
+		const story = this.store.storyState.article || {};
+		const status = this.store.storyState.status;
 		return (
 			<div className="page">
 				<Helmet>
 					<title>{story.headline}</title>
 				</Helmet>
-				<article className="story">
+				{status !== 'scraped ' && <article className="story">
+					<h1>Your article is being converted!</h1>
+					<h2>Check back to this URL in a few minutes.</h2>
+				</article>}
+				{status === 'scraped ' && <article className="story">
 					<div className="story-header">
 						<h2>ANALYSIS</h2>
 						<h1>{story.headline}</h1>
@@ -86,7 +91,7 @@ export default class StoryPage extends Component {
 							})}
 						</ul>
 					</div>
-				</article>
+				</article>}
 			</div>
 		);
 	}
