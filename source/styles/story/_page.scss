@@ -53,9 +53,20 @@
   padding-top: 16px;
   margin-right: 60px;
   width: 612px;
-  img {
-    width: 100%;
-    height: auto;
+  .lead-image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+    div {
+      width: 100%;
+      padding: 14px 14px 28px;
+      color: white;
+      background: black;
+      margin-top: -8px;
+      font-size: 14px;
+      font-weight: 900;
+    }
   }
   p {
     font-size: 18px;

@@ -58,7 +58,10 @@ export default class StoryPage extends Component {
 						</div>
 					</div>
 					<div className="story-content">
-						{story.leadImage && <img src={story.leadImage.thumb} />}
+						{story.leadImage && <div className="lead-image">
+							<img src={story.leadImage.thumb} />
+							{story.leadImage.caption && <div>{story.leadImage.caption}</div>}
+						</div>}
 						{story.story && story.story.paragraphs && Array.prototype.map.call(story.story.paragraphs, (html, index) => {
 							const htmlToReactParser = new HtmlToReactParser();
 							const reactElement = htmlToReactParser.parse(html);

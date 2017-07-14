@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 
 import FoxHeader from "../component-library/Navigation/FoxHeader";
 import FoxFooter from '../component-library/Navigation/FoxFooter';
+import EdFooter from '../component-library/Navigation/EdFooter';
 
 @inject("store")
 @observer
@@ -31,7 +32,8 @@ export default class App extends Component {
 						)}
 					/>
 				</main>
-				<FoxFooter/>
+				<FoxFooter />
+				<EdFooter />
 			</div>
 		);
 	}
