@@ -1,0 +1,38 @@
+.footer {
+  background: #183a52;
+  color: #fff;
+  padding: 46px 0 60px;
+  h6 {
+    margin: 0 0 18px;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+  .footer-nav {
+    width: 922px;
+    margin: 0 auto;
+    display: flex;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #fff;
+  }
+  .site-sections {
+    min-width: 234px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  li {
+    margin: 0 0 2px;
+    overflow: hidden;
+    a {
+      font-weight: 900;
+      font-size: 13px;
+      color: #fff;
+    }
+  }
+}
