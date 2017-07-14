@@ -34,7 +34,7 @@ export default class StoryPage extends Component {
 						<h2>ANALYSIS</h2>
 						<h1>{story.headline}</h1>
 						<div className="story-header-meta">
-							{story.byLine.length > 0 && <div className="byline">
+							{stroy.byLine && story.byLine.length > 0 && <div className="byline">
 								<p>
 									By&ensp;
 									{Array.prototype.map.call(story.byLine, (by, index, arr) => {
@@ -51,7 +51,7 @@ export default class StoryPage extends Component {
 								 &ensp;• <a href="https://www.foxnews.com/"><strong>Fox News</strong></a>
 								</p>
 							</div>}
-							{story.byLine.name && <div className="byline">
+							{stroy.byLine && story.byLine.name && <div className="byline">
 								{story.byLine.image ? <img src={`${story.byLine.image}`} /> : ''}
 								{story.byLine.name ? <p>By <strong>{story.byLine.name}</strong> • Published {story.dateline}</p> : <p>Published {story.dateline}</p>}
 							</div>}
