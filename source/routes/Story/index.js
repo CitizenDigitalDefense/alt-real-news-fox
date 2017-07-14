@@ -16,17 +16,19 @@ export default class StoryPage extends Component {
 	}
 	render() {
 		const story = this.store.storyState.article || {};
-		const status = this.store.storyState.status;
+		const scraped = this.store.storyState.scraped;
 		return (
 			<div className="page">
 				<Helmet>
 					<title>{story.headline}</title>
 				</Helmet>
-				{status !== 'scraped ' && <article className="story">
-					<h1>Your article is being converted!</h1>
-					<h2>Check back to this URL in a few minutes.</h2>
+				{!scraped && <article className="story">
+					<div className="story-header">
+						<h1>Your article is being converted!</h1>
+						<h2>Check back to this URL in a few minutes.</h2>
+					</div>
 				</article>}
-				{status === 'scraped ' && <article className="story">
+				{scraped && <article className="story">
 					<div className="story-header">
 						<h2>ANALYSIS</h2>
 						<h1>{story.headline}</h1>
