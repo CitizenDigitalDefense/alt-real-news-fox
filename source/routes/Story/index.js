@@ -48,7 +48,7 @@ export default class StoryPage extends Component {
 										);
 									})}
 								 &ensp;• Published {story.dateline}
-								 &ensp;• <a href="https://www.foxnews.com/"><strong>Fox News</strong></a>
+								 &ensp;• <a href={`https://nytimes.com${story.slug}`}><strong>NYT</strong></a>
 								</p>
 							</div>}
 							{story.byLine && story.byLine.name && <div className="byline">
@@ -60,7 +60,9 @@ export default class StoryPage extends Component {
 					<div className="story-content">
 						{story.leadImage && <div className="lead-image">
 							<img src={story.leadImage.thumb} />
-							{story.leadImage.caption && <div>{story.leadImage.caption}</div>}
+							{(story.leadImage.caption || story.leadImage.credit) && <div>
+								{story.leadImage.caption}<span>&ensp;{story.leadImage.credit}</span>
+							</div>}
 						</div>}
 						{story.story && story.story.paragraphs && Array.prototype.map.call(story.story.paragraphs, (html, index) => {
 							const htmlToReactParser = new HtmlToReactParser();
