@@ -35,13 +35,12 @@ export default class FoxHeader extends Component {
 								<input type="text" />
 								<button>Submit</button>
 							</div>
+							<img src={require('../../assets/magnify-white.png')} />
 						</div>
 						<div className="nav">
 							<ul>
-								<li><a>Home</a></li>
-								<li><a>Video</a></li>
-								<li><a className="active">Politics</a></li>
 								<li><a>U.S.</a></li>
+								<li><a className="active">Politics</a></li>
 								<li><a>Opinion</a></li>
 								<li><a>Business</a></li>
 								<li><a>Entertainment</a></li>

@@ -13,6 +13,9 @@
     font-weight: 600;
   }
   .footer-nav {
+    @media(max-width: 720px) {
+      display: none;
+    }
     width: 922px;
     margin: 0 auto;
     display: flex;

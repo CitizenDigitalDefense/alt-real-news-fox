@@ -31,7 +31,7 @@ export default class StoryPage extends Component {
 				</article>}
 				{scraped && <article className="story">
 					<div className="story-header">
-						<h2>ANALYSIS</h2>
+						<h2>{story.category || 'ANALYSIS'}</h2>
 						<h1>{story.headline}</h1>
 						<div className="story-header-meta">
 							{story.byLine && story.byLine.length > 0 && <div className="byline">

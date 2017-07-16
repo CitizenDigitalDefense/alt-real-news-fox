@@ -4,7 +4,7 @@
 		height: 32px;
 		margin: 0;
 		background: #333;
-		@media(max-width: 972px) {
+		@media(max-width: 720px) {
 			display: none;
 		}
 		.network {
@@ -23,13 +23,17 @@
 				a {
 					&.active {
 						background-color: #000;
+						span {
+							background-image: url('../../assets/logo.png');
+							opacity: 1;
+						}
 					}
 					display: inline-block;
 					height: 32px;
 					width: 90px;
 					padding: 0 10px;
 					span {
-						opacity: 0.05;
+						opacity: 0.1;
 				    display: block;
 						height: 10px;
 						width: 100%;
@@ -37,7 +41,7 @@
 						background-size: contain;
 						background-position: center;
 						margin: 11px 0;
-						background: white;
+						background-image: url('../../assets/logo.png');
 					}
 				}
 			}
@@ -58,11 +62,18 @@
 		background: #183a52;
     padding: 0 0 18px;
 		color: white;
+		@media(max-width: 720px) {
+    	padding: 14px 22px 15px;
+			border-bottom: 3px solid #c83f3f;
+		}
 		& > div {
 			margin: 0 auto;
 			max-width: 972px;
 			padding-top: 18px;
     	vertical-align: baseline;
+			@media(max-width: 720px) {
+	    	padding-top: 0;
+			}
 		}
 		.branding {
 			margin-bottom: 4px;
@@ -70,12 +81,15 @@
 				float: left;
 				display: block;
 				margin-left: 8px;
-				margin-top: -9px;
+				margin-top: -15px;
 				font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,sans-serif;
 				font-weight: 300;
 				font-size: 46px;
-				line-height: 50px;
     		letter-spacing: -1px;
+				@media(max-width: 720px) {
+					margin-top: -7px;
+					font-size: 26px;
+				}
 			}
 			.logo {
 				float: left;
@@ -89,6 +103,10 @@
 				background-size: contain;
 				background-repeat: no-repeat;
 		    text-indent: -9999em;
+				@media(max-width: 720px) {
+					height: 20px;
+					width: 128px;
+				}
 			}
 		}
 		.search {
@@ -96,7 +114,22 @@
 	    padding: 0;
 	    margin: 0;
 			margin-top: -5px;
+			img {
+				display: none;
+				@media(max-width: 720px) {
+					width: 16px;
+					height: 16px;
+					display: block;
+					text-align: right;
+					position: relative;
+					top: 4px;
+					right: -4px;
+				}
+			}
 			div {
+				@media(max-width: 720px) {
+					display: none;
+				}
 				border-radius: 4px;
 		    background: #fff;
 		    position: relative;
@@ -144,6 +177,9 @@
     	height: 30px;
 			margin-left: -6px;
 			padding-top: 6px;
+			@media(max-width: 720px) {
+				overflow-x: scroll;
+			}
 			ul li {
 				display: inline;
 			}
@@ -157,6 +193,9 @@
 		    font-size: 12px;
 		    font-weight: 900;
 		    line-height: 12px;
+				@media(max-width: 720px) {
+					padding: 5px 6px;
+				}
 				&:hover, &.active {
 			    background: #425e71;
 				}
