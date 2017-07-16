@@ -47,13 +47,15 @@ export default class StoryPage extends Component {
 											</span>
 										);
 									})}
-								 &ensp;• Published {story.dateline}
-								 &ensp;• <a href={`https://nytimes.com${story.slug}`}><strong>NYT</strong></a>
+								 &ensp;• Published {story.dateline} • <a href={`https://nytimes.com${story.slug}`} target="_blank"><strong>NYT</strong></a>
 								</p>
 							</div>}
 							{story.byLine && story.byLine.name && <div className="byline">
 								{story.byLine.image ? <img src={`${story.byLine.image}`} /> : ''}
-								{story.byLine.name ? <p>By <strong>{story.byLine.name}</strong> • Published {story.dateline}</p> : <p>Published {story.dateline}</p>}
+								{story.byLine.name ? <p>By <strong>{story.byLine.name}</strong> • Published {story.dateline} • <a href={`https://nytimes.com${story.slug}`} target="_blank"><strong>NYT</strong></a></p> : <p>Published {story.dateline} • <a href={`https://nytimes.com${story.slug}`} target="_blank"><strong>NYT</strong></a></p>}
+							</div>}
+							{!story.byLine && <div className="byline">
+								<p>Published {story.dateline} • <a href={`https://www.nytimes.com${story.slug}`} target="_blank">NYT</a></p>
 							</div>}
 						</div>
 					</div>
