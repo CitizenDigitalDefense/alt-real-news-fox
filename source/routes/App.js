@@ -17,7 +17,6 @@ export default class App extends Component {
 		this.store = this.props.store;
 	}
 	render() {
-		const appDescription = 'The Toolbox includes both a local New York City policies and anti-displacement policies from comparable cities across the country. Information on policy in the toolbox includes research, press reports, legislation, interviews from engaged local community groups and policy experts.';
 		return (
 			<div className="wrapper">
 				<Helmet>
