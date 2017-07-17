@@ -20,10 +20,15 @@ body {
   main {
     min-height: 100vh;
   }
+  margin-bottom: 160px;
 }
 
 #root, .wrapper {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
+}
+
+.hidden {
+  display: none;
 }

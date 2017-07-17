@@ -39,7 +39,7 @@ export default class StoryPage extends Component {
 									By&ensp;
 									{Array.prototype.map.call(story.byLine, (by, index, arr) => {
 										return (
-											<span>
+											<span key={index}>
 												<strong>
 													{by.name}
 												</strong>
@@ -70,7 +70,7 @@ export default class StoryPage extends Component {
 							const htmlToReactParser = new HtmlToReactParser();
 							const reactElement = htmlToReactParser.parse(html);
 							return (
-								<p>
+								<p key={index}>
 									{reactElement}
 								</p>
 							);
@@ -78,9 +78,9 @@ export default class StoryPage extends Component {
 						<div className="more-content">
 							<h4>Stories You May Like</h4>
 							<ul>
-								{story.more && Array.prototype.map.call(story.more.slice(0, 3), (more) => {
+								{story.more && Array.prototype.map.call(story.more.slice(0, 3), (more, index) => {
 									return (
-										<li>
+										<li key={index}>
 											<a href={more.href}>
 												<img src={more.thumb} />
 												<h5>{more.headline}</h5>
@@ -93,9 +93,9 @@ export default class StoryPage extends Component {
 						<div className="more-content">
 							<h4>More Stories</h4>
 							<ul>
-								{story.more && Array.prototype.map.call(story.more.slice(3), (more) => {
+								{story.more && Array.prototype.map.call(story.more.slice(3), (more, index) => {
 									return (
-										<li>
+										<li key={index}>
 											<a href={more.href}>
 												<img src={more.thumb} />
 												<h5>{more.headline}</h5>
@@ -109,9 +109,9 @@ export default class StoryPage extends Component {
 					<div className="trending-sidebar">
 						<h4>Trending This Day</h4>
 						<ul>
-							{story.trending && Array.prototype.map.call(story.trending, (trend) => {
+							{story.trending && Array.prototype.map.call(story.trending, (trend, index) => {
 								return (
-									<li>
+									<li key={index}>
 										<a href={trend.href}><h5>{trend.headline}</h5></a>
 									</li>
 								);

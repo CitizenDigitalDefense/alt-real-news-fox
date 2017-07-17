@@ -1,45 +1,89 @@
 .footer {
-  background: #183a52;
+  padding: 16px 10px 24px;
+  background: #033045;
   color: #fff;
-  padding: 46px 0 60px;
-  &.ed {
-    background: #033045;
-    text-align: center;
-  }
-  h6 {
-    margin: 0 0 18px;
-    font-size: 24px;
-    line-height: 26px;
-    font-weight: 600;
-  }
-  .footer-nav {
-    @media(max-width: 720px) {
-      display: none;
-    }
-    width: 922px;
+  text-align: center;
+  font-size: 14px;
+  & > div {
+    max-width: 720px;
     margin: 0 auto;
-    display: flex;
-    padding-bottom: 32px;
-    border-bottom: 1px solid #fff;
   }
-  .site-sections {
-    min-width: 234px;
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
-  }
-  li {
-    margin: 0 0 2px;
-    overflow: hidden;
-    a {
-      font-weight: 900;
-      font-size: 13px;
-      color: #fff;
+  button {
+    border: 1px solid #FFF;
+    border-radius: 4px;
+    background: none;
+    color: #FFF;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 900;
+    &:hover {
+      color: #033045;
+      background: #FFF;
     }
+  }
+  animation: revealfoot 1s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 30s;
+}
+
+@keyframes revealfoot {
+    from {
+      bottom: -100px;
+    }
+    to {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+}
+
+.footer__finish-prompt {
+  input, p, button {
+    display: inline;
+    margin: 0 6px;
+  }
+}
+
+.footer__initial-thoughts {
+  p {
+    margin-bottom: 12px;
+  }
+  button {
+    display: inline;
+    margin: 0 4px;
+  }
+}
+
+.footer__conclusion {
+  height: 100%;
+  padding: 16px;
+  h5, p {
+    margin: 8px 0;
+    opacity: 0.7;
+  }
+  p {
+    font-size: 13px;
+  }
+  a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    text-decoration: underline;
+    word-wrap: break-word;
+  }
+  textarea {
+    width: 100%;
+    min-height: 80px;
+    font-size: 14px;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+    &:disabled {
+      opacity: 0.8;
+    }
+  }
+  button {
+    margin-bottom: 12px;
   }
 }
