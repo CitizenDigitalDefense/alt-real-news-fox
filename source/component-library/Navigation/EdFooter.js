@@ -46,6 +46,9 @@ class EdFooter extends Component {
           <br/>
           <small>I make no money off this site, do not claim any content to be my own, and do my best to attribute work.</small>
         </div>}
+        {(this.state.read && this.state.change != null) && <div className="footer__diy">
+          <h5>Convert NY Times articles to Fox News look-alikes by swapping out <u>'https://nytimes.com'</u> with <u>'foxnews.cn.com'</u> on your article's URL. Fox to NY Times look-alike uses <u>'nytimes.cn.com'</u></h5>
+        </div>}
       </div>
     );
   }
